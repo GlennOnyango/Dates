@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react';
+import DateBox from './components/Boxes';
+import DateButtons from './components/Buttons';
+import './assets/App.css';
 function App() {
+  const [days,setDays] = useState<number[]>([1,2,3,4,5,6,7]);
+  const [selectedDay,setSelectedDay] = useState<number>(0);
+  const dateAction = (day:number[])=>{
+    setDays(day);
+  }
+  const selectionAction = (day:number)=>{
+    setSelectedDay(day);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main_arrangement'>
+      <DateButtons title='previous' days={days} direction={false} datesSetter={dateAction} />
+      {days.map(day=><DateBox day={day} onSelection={selectionAction} selectedDate={selectedDay}/>)}
+      <DateButtons title='Next' days={days} direction={true} datesSetter={dateAction}/>
     </div>
   );
 }

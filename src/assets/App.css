@@ -1,0 +1,22 @@
+.main_arrangement{
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.normal_day{
+    background-color: blueviolet;
+    width: 10%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selec_day{
+    border-color: black;
+    background-color: lightgrey;
+    border-width: 2px;
+    border-style: solid;
+    z-index: 100;
+}
