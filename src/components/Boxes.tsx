@@ -3,7 +3,7 @@ import '../assets/App.css';
 
 type Box = {
     day: number,
-    onSelection:any,
+    onSelection:(date:number)=>void,
     selectedDate:number,
 }
 

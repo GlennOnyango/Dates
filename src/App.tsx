@@ -8,9 +8,7 @@ function App() {
   const dateAction = (day:number[])=>{
     setDays(day);
   }
-  const selectionAction = (day:number)=>{
-    setSelectedDay(day);
-  }
+  const selectionAction = (day:number):void=>setSelectedDay(day);
   return (
     <div className='main_arrangement'>
       <DateButtons title='previous' days={days} direction={false} datesSetter={dateAction} />
